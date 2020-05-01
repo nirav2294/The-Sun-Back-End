@@ -5,9 +5,11 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -23,8 +25,9 @@ public class UserRole {
 	@Column(name = "role_title")
 	private String roletTitle;
 	
-	@OneToMany(mappedBy = "role")
-	Set<User> users = new HashSet<User>();
+//	@OneToMany(mappedBy = "user_role", fetch = FetchType.LAZY)
+//	@JoinColumn(name = "user_id")
+//	Set<User> users = new HashSet<User>();
 	public UserRole(int roleId, String roletTitle) {
 		super();
 		this.roleId = roleId;
@@ -47,8 +50,9 @@ public class UserRole {
 	}
 	@Override
 	public String toString() {
-		return "UserRole [roleId=" + roleId + ", roletTitle=" + roletTitle + ", users=" + users.toString() + "]";
+		return "UserRole [roleId=" + roleId + ", roletTitle=" + roletTitle + "]";
 	}
+	
 	
 	
 	
