@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,7 +33,7 @@ public class User {
 	@JoinColumn(name = "role_id")
 	private UserRole userRole;
 
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user" , fetch = FetchType.EAGER)
 	private Set<Ticket> tickets = new HashSet<Ticket>();
 
 	public User() {
@@ -81,8 +82,10 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", userName=" + userName + ", password=" + password + ", tickets="
-				+ tickets.toString() + ", userRole=" + userRole.toString() + "]";
+		return "User [userId=" + userId + ", userName=" + userName + ", password=" + password + ", userRole=" + userRole.toString()
+				+ ", tickets=" + tickets.toString() + "]";
 	}
+
+
 
 }
