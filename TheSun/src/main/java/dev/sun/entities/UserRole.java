@@ -1,10 +1,14 @@
 package dev.sun.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +22,9 @@ public class UserRole {
 	
 	@Column(name = "role_title")
 	private String roletTitle;
+	
+	@OneToMany(mappedBy = "role")
+	Set<User> users = new HashSet<User>();
 	public UserRole(int roleId, String roletTitle) {
 		super();
 		this.roleId = roleId;
@@ -40,7 +47,7 @@ public class UserRole {
 	}
 	@Override
 	public String toString() {
-		return "UserRole [roleId=" + roleId + ", roletTitle=" + roletTitle + "]";
+		return "UserRole [roleId=" + roleId + ", roletTitle=" + roletTitle + ", users=" + users.toString() + "]";
 	}
 	
 	
