@@ -23,18 +23,22 @@ public class Ticket {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ticket_id")
 	private int ticketId;
+	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
+	
 	@Column(name = "placement_time")
 	private Timestamp placementTime;
+	
 	@Column(name = "status")
 	private String status;
+	
 	@Column(name = "note")
 	private String note;
 
-	@OneToMany(mappedBy = "ticket" )
-	private Set<Pizza> movies = new HashSet<Pizza>();
+	@OneToMany(mappedBy = "ticket" , fetch = FetchType.EAGER)
+	private Set<Pizza> pizzas = new HashSet<Pizza>();
 
 	public Ticket() {
 		super();
@@ -91,8 +95,10 @@ public class Ticket {
 
 	@Override
 	public String toString() {
-		return "Ticket [ticketId=" + ticketId + ", user=" + user + ", placementTime=" + placementTime + ", status="
-				+ status + ", note=" + note + "]";
+		return "Ticket [ticketId=" + ticketId + ", user=" + user.getUserId() + ", placementTime=" + placementTime + ", status="
+				+ status + ", note=" + note + ", pizzas=" + pizzas.toString() + "]";
 	}
+
+
 
 }

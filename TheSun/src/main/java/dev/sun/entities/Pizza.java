@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +14,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.criteria.Fetch;
 
 
 @Entity
@@ -30,7 +32,7 @@ public class Pizza {
 	@JoinColumn(name = "ticket_id")
 	private Ticket ticket;
 
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "pizza_topping", joinColumns = { @JoinColumn(name = "pt_pizza") }, inverseJoinColumns = {
 			@JoinColumn(name = "pt_topping") })
 	private Set<Topping> toppings = new HashSet<Topping>();
@@ -64,7 +66,7 @@ public class Pizza {
 
 	@Override
 	public String toString() {
-		return "Pizza [pizzaId=" + pizzaId + ", ticketId=" + ticket + "]";
+		return "Pizza [pizzaId=" + pizzaId + ", ticketId=" + ticket.getTicketId() + ", toppings= " + toppings.toString() +"]";
 	}
 
 }

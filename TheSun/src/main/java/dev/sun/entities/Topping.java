@@ -1,10 +1,16 @@
 package dev.sun.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,10 +21,13 @@ public class Topping {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "topping_id")
 	private int toppingId;
+	
 	@Column(name = "topping_name")
 	private String toppingName;
+	
 	@Column(name = "topping_cost")
 	private double toppingCost;
+	
 
 	public Topping() {
 		super();
