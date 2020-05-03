@@ -23,15 +23,15 @@ public class UserRole {
 	private int roleId;
 	
 	@Column(name = "role_title")
-	private String roletTitle;
+	private String roleTitle;
 	
 //	@OneToMany(mappedBy = "user_role", fetch = FetchType.LAZY)
 //	@JoinColumn(name = "user_id")
 //	Set<User> users = new HashSet<User>();
-	public UserRole(int roleId, String roletTitle) {
+	public UserRole(int roleId, String roleTitle) {
 		super();
 		this.roleId = roleId;
-		this.roletTitle = roletTitle;
+		this.roleTitle = roleTitle;
 	}
 	public UserRole() {
 		super();
@@ -42,15 +42,15 @@ public class UserRole {
 	public void setRoleId(int roleId) {
 		this.roleId = roleId;
 	}
-	public String getRoletTitle() {
-		return roletTitle;
+	public String getRoleTitle() {
+		return roleTitle;
 	}
-	public void setRoletTitle(String roletTitle) {
-		this.roletTitle = roletTitle;
+	public void setRoleTitle(String roleTitle) {
+		this.roleTitle = roleTitle;
 	}
 	@Override
 	public String toString() {
-		return "UserRole [roleId=" + roleId + ", roletTitle=" + roletTitle + "]";
+		return "UserRole [roleId=" + roleId + ", roletTitle=" + roleTitle + "]";
 	}
 	
 	
