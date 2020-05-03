@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "d754d1f9-8b16-4fa2-857c-61f30ca86334",
+		"name": "Project 2 - TheSun",
+		"description": "UserRole tests for Project 2\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UserRole",
+			"item": [
+				{
+					"name": "localhost:9000/roles",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roleId\": 0,\n    \"roleTitle\": \"Customer\"\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/roles",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"roles"
+							]
+						},
+						"description": "Testing Create UserRole"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:9000/roles",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roleId\": 2,\n    \"roleTitle\": \"UnRegistered Customer\"\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/roles",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"roles"
+							]
+						},
+						"description": "Update UserRole Test"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:9000/roles/2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/roles/2",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"roles",
+								"2"
+							]
+						},
+						"description": "Get USerRole ById Test"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:9000/roles",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"roleId\":2,\n\t\"roleTitle\":\"null\"\n\t\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/roles",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"roles"
+							]
+						},
+						"description": "Testing deleteUserRole "
+					},
+					"response": []
+				}
+			],
+			"description": "All UserRole Tests\n",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Topping",
+			"item": [
+				{
+					"name": "localhost:9000/toppings",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"toppingId\": 0,\n    \"toppingName\": \"Onions\",\n    \"toppingCost\": 1.50\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/toppings",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"toppings"
+							]
+						},
+						"description": "Create Topping Test"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:9000/toppings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/toppings",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"toppings"
+							]
+						},
+						"description": "getAllTopping Test"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:9000/toppings/2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/toppings/2",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"toppings",
+								"2"
+							]
+						},
+						"description": "getToppingById test"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:9000/toppings",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"toppingId\": 2,\n    \"toppingName\": \"Pineapple\",\n    \"toppingCost\": 2.45\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/toppings",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"toppings"
+							]
+						},
+						"description": "updateTopping Test"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:9000/toppings",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"toppingId\": 5,\n    \"toppingName\": \"Onions\",\n    \"toppingCost\": 1.50\n}"
+						},
+						"url": {
+							"raw": "localhost:9000/toppings",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"toppings"
+							]
+						},
+						"description": "deleteTopping test"
+					},
+					"response": []
+				}
+			],
+			"description": "All Tests for Toppings",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
