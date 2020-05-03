@@ -37,7 +37,7 @@ public class Ticket {
 	@Column(name = "note")
 	private String note;
 
-	@OneToMany(mappedBy = "ticket" )
+	@OneToMany(mappedBy = "ticket" , fetch = FetchType.EAGER)
 	private Set<Pizza> pizzas = new HashSet<Pizza>();
 
 	public Ticket() {
@@ -95,8 +95,10 @@ public class Ticket {
 
 	@Override
 	public String toString() {
-		return "Ticket [ticketId=" + ticketId + ", pizzas=" + pizzas.toString() +", user=" + user.toString() + ", placementTime=" + placementTime + ", status="
-				+ status + ", note=" + note + "]";
+		return "Ticket [ticketId=" + ticketId + ", user=" + user.getUserId() + ", placementTime=" + placementTime + ", status="
+				+ status + ", note=" + note + ", pizzas=" + pizzas.toString() + "]";
 	}
+
+
 
 }
