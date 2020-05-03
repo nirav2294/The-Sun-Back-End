@@ -10,6 +10,4 @@ import dev.sun.entities.User;
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer>{
 
-	User findByUserName(String userName);
-	
 }
