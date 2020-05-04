@@ -5,8 +5,7 @@ import java.util.Map;
 
 public enum ORDERSTATUS {
 
-	Submitted((short) 1), InProgress((short) 2), Ready((short) 3), OutForDelivery((short) 4), Delivered((short) 5),
-	Canceled((short) 6);
+	Submitted((short) 1), InProgress((short) 2), Ready((short) 3),  Deliver((short) 4);
 
 	private short value;
 	private static Map map = new HashMap<>();
@@ -28,5 +27,6 @@ public enum ORDERSTATUS {
 	public short getValue() {
 		return value;
 	}
+
 
 }
