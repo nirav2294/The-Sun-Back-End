@@ -33,9 +33,8 @@ public class Pizza {
 	private Ticket ticket;
 
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "pizza_topping",
-	joinColumns = { @JoinColumn(name = "pt_pizza") }, 
-	inverseJoinColumns = {@JoinColumn(name = "pt_topping") })
+	@JoinTable(name = "pizza_topping", joinColumns = { @JoinColumn(name = "pt_pizza") }, inverseJoinColumns = {
+			@JoinColumn(name = "pt_topping") })
 	private Set<Topping> toppings = new HashSet<Topping>();
 
 
@@ -71,3 +70,4 @@ public class Pizza {
 	}
 
 }
+
