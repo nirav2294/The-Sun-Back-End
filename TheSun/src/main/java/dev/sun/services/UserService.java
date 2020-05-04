@@ -6,6 +6,13 @@ import dev.sun.entities.User;
 
 public interface UserService {
 	
-	List<User> gellAllUsers();
-
+	User createUser(User user);
+	
+	User getUserById(int id);
+	List<User> getAllUsers();
+	User loginUser(String username, String password);
+	
+	User updateUser(User user);
+	
+	boolean deleteUser(User user);
 }

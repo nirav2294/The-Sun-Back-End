@@ -54,5 +54,10 @@ class TheSunApplicationTests {
 		
 		System.out.println((List<Pizza> ) pr.findAll());
 	}
+	
+	@Test
+	void getAllTicketsByUserId() {
+		System.out.println(ur.findById(2).get());
+	}
 }
 
