@@ -36,7 +36,8 @@ public class Ticket {
 	
 	@Column(name = "note")
 	private String note;
-
+	
+ 
 	@OneToMany(mappedBy = "ticket" , fetch = FetchType.EAGER)
 	private Set<Pizza> pizzas = new HashSet<Pizza>();
 

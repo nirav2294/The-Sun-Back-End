@@ -17,6 +17,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import dev.sun.entities.ORDERSTATUS;
+import dev.sun.entities.Pizza;
 import dev.sun.entities.Ticket;
 import dev.sun.entities.User;
 import dev.sun.services.TicketServiceImpl;
@@ -112,6 +113,13 @@ class TicketServiceImplTest {
 	@Test
 	void getTicketsByUserId() {
 		List<Ticket> list = ticketImpl.getTicketsByUserId(3);
+		System.out.println(list);
+	}
+
+	@Order(8)
+	@Test
+	void findTickePizzaByTicketId() {
+		List<Pizza> list = ticketImpl.findTickePizzaByTicketId(3);
 		System.out.println(list);
 	}
 }

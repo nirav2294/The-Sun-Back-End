@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.server.ResponseStatusException;
 
+import dev.sun.entities.Pizza;
 import dev.sun.entities.Ticket;
 import dev.sun.services.TicketServiceImpl;
 
@@ -96,5 +97,13 @@ public class TicketController {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Incorrect User Number");
 		}
 	}
-
+	@ResponseBody
+	@RequestMapping(value = "/tickets/details/{tid}", method = RequestMethod.GET)
+	public List<Pizza> getTicketDetailsById(@PathVariable Integer tid) {
+		try {
+			return ticketImpl.findTickePizzaByTicketId(tid);
+		} catch (NoSuchElementException e) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Incorrect User Number");
+		}
+	}
 }

@@ -32,6 +32,24 @@ public class Pizza {
 	@JoinColumn(name = "ticket_id")
 	private Ticket ticket;
 
+	 
+	
+	public Ticket getTicket() {
+		return ticket;
+	}
+
+	public void setTicket(Ticket ticket) {
+		this.ticket = ticket;
+	}
+
+	public Set<Topping> getToppings() {
+		return toppings;
+	}
+
+	public void setToppings(Set<Topping> toppings) {
+		this.toppings = toppings;
+	}
+
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "pizza_topping", joinColumns = { @JoinColumn(name = "pt_pizza") }, inverseJoinColumns = {
 			@JoinColumn(name = "pt_topping") })

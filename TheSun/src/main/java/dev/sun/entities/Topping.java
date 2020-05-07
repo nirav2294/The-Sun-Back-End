@@ -21,13 +21,15 @@ public class Topping {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "topping_id")
 	private int toppingId;
-	
+
 	@Column(name = "topping_name")
 	private String toppingName;
-	
+
 	@Column(name = "topping_cost")
 	private double toppingCost;
-	
+
+	@ManyToMany(mappedBy = "toppings")
+	Set<Pizza> pizzas = new HashSet<Pizza>();
 
 	public Topping() {
 		super();
