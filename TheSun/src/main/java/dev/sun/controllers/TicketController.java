@@ -55,7 +55,7 @@ public class TicketController {
 
 //4- Update Ticket
 	@ResponseBody
-	@RequestMapping(value = "ticktes", method = RequestMethod.PUT)
+	@RequestMapping(value = "/ticktes/update", method = RequestMethod.PUT)
 	public int updateTicket(@RequestBody Ticket ticket) {
 		try {
 			return ticketImpl.updateTicket(ticket);
@@ -66,7 +66,7 @@ public class TicketController {
 
 //5- Update Note 
 	@ResponseBody
-	@RequestMapping(value = "ticktes/editnote", method = RequestMethod.PUT)
+	@RequestMapping(value = "/ticktes/editnote", method = RequestMethod.PUT)
 	public Ticket updateTicketNote(@RequestBody Ticket tickt) {
 		try {
 			return ticketImpl.updateNote(tickt.getTicketId(), tickt.getNote());
@@ -77,7 +77,7 @@ public class TicketController {
 
 //6- Update Status
 	@ResponseBody
-	@RequestMapping(value = "ticktes/editstatus", method = RequestMethod.PUT)
+	@RequestMapping(value = "/ticktes/editstatus", method = RequestMethod.PUT)
 	public Ticket updateTicketStatus(@RequestBody Ticket tickt) {
 		try {
 

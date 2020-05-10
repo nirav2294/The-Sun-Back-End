@@ -21,6 +21,7 @@ import dev.sun.services.PizzaService;
 
 @Component
 @Controller
+@CrossOrigin(origins="*", allowedHeaders="*")
 public class PizzaController {
 
 	@Autowired //to call AssociateService here.
