@@ -63,7 +63,7 @@ public class UserController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/users/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/users/login", method = RequestMethod.POST)
 	public User loginUser(@RequestBody User user) {
 		user = us.loginUser(user.getUserName(), user.getPassword());
 		if(user == null) {
