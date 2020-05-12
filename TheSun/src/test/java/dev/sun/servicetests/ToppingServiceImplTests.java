@@ -1,6 +1,7 @@
 package dev.sun.servicetests;
 
 import static org.junit.jupiter.api.Assertions.*;
+import javax.transaction.Transactional;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import dev.sun.entities.Topping;
 import dev.sun.services.ToppingServiceImpl;
 
 @SpringBootTest
+@Transactional
 @ContextConfiguration(classes = dev.sun.app.TheSunApplication.class)
 class ToppingServiceImplTests {
 	
