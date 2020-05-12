@@ -6,11 +6,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
+import javax.transaction.Transactional;
 
 import dev.sun.entities.UserRole;
 import dev.sun.services.UserRoleServiceImpl;
 
 @SpringBootTest
+@Transactional
 @ContextConfiguration(classes = dev.sun.app.TheSunApplication.class)
 class UserRoleServiceImplTests {
 	
